@@ -5,6 +5,12 @@
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vite App</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Titillium+Web:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
@@ -12,7 +18,7 @@
       <section
         class="mx-auto my-0 w-9/12 flex justify-between text-white text-sm"
       >
-        <article class="flex justify-between">
+        <article class="flex justify-between font-titillium-web">
           <p>Contact our Customer Service</p>
           <img src="" alt="" />
           <p>(800) 333-3567</p>
@@ -20,22 +26,102 @@
           <a href="#">CONTACT US</a>
           <a href="#">WHERE TO BUY</a>
         </article>
-        <p class="">
+        <p class="font-titillium-web">
           Promo message area - shipping advantages, special offers…
         </p>
-        <article class="flex justify-between">
-          <img src="" alt="" />
-          <a href="#">SIGN IN</a>
+        <article
+          class="flex justify-between items-center font-bebas-neue text-lg"
+        >
+          <img src="men.svg" alt="" />
+          <a href="#" class="ml-3">SIGN IN</a>
         </article>
       </section>
     </section>
 
-    <header class="h-24 shadow-md"></header>
+    <header class="h-24 shadow-md flex">
+      <section
+        class="mx-auto my-0 w-9/12 h-full flex justify-between items-center text-sm"
+      >
+        <div
+          class="flex justify-between items-center w-5/12 font-bebas-neue text-2xl"
+        >
+          <img src="inchoo-logo 1.svg" alt="logo" />
+          <a href="#">NEW<br />ARRIVALS</a>
+          <a href="#">BEST<br />SELLERS</a>
+        </div>
+        <div class="flex justify-between items-center w-5/12">
+          <input
+            type="search"
+            name="search"
+            id="search"
+            class="h-12 border-2 w-4/6 pl-3 border-black"
+            placeholder="Search entire store here…"
+          />
+          <button
+            class="h-12 p-4 bg-green-700 flex items-center justify-between"
+          >
+            <img src="shopping-cart.png" alt="shopping cart" />
+            <p class="font-bebas-neue text-lg text-white px-5">MY CART</p>
+            <img src="down.svg" alt="arrow down" />
+          </button>
+        </div>
+      </section>
+    </header>
 
-    <main>
-      <h1 class="text-7xl">SHOPPING CART</h1>
-      <div id="cart"></div>
-      <button id="btn">Button</button>
+    <main class="flex">
+      <section class="mx-auto my-0 w-9/12">
+        <h1 class="text-7xl mt-14 mb-8 font-bebas-neue">SHOPPING CART</h1>
+        <section class="flex justify-between">
+          <section class="w-7/12 divide-y">
+            <article class="flex py-2 justify-normal font-bold w-5/6">
+              <p class="flex-1">Item</p>
+              <p>Qty</p>
+              <p class="ml-12">SUBTOTAL</p>
+            </article>
+            <div id="cart" class="divide-y"></div>
+          </section>
+          <section class="w-4/12">
+            <section>
+              <h1 class="text-4xl font-bebas-neue">SUMMARY</h1>
+              <article
+                class="flex justify-between bg-gray-100 mt-2 px-6 py-4 border-b border-white"
+              >
+                <h3 class="font-bebas-neue text-lg">
+                  ESTIMATE SHIPPING AND TAX
+                </h3>
+                <button id="toggle">+</button>
+              </article>
+              <article class="hidden px-6 py-4" id="content">
+                <h3>Country</h3>
+                <select name="" id="">
+                  <option value="croatia">Croatia</option>
+                  <option value="uk">UK</option>
+                </select>
+                <h3>State/Province</h3>
+                <input type="text" />
+                <h3>Zip/Postal Code</h3>
+                <input type="text" />
+                <h3>Flat Rate</h3>
+                <input type="checkbox" name="" id="" />
+              </article>
+              <article class="bg-gray-100 px-6 py-4 border-b border-white">
+                <div>
+                  <h3>SUBTOTAL</h3>
+                  <p id="subtotal"></p>
+                </div>
+                <div>
+                  <h3>SHIPPING</h3>
+                  <p id="shipping"></p>
+                </div>
+              </article>
+              <article class="flex bg-gray-100 px-6 py-4">
+                <h3>ORDER TOTAL</h3>
+                <p id="total"></p>
+              </article>
+            </section>
+          </section>
+        </section>
+      </section>
     </main>
 
     <script type="module" src="/main.js"></script>

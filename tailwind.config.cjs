@@ -2,7 +2,12 @@
 export default {
   content: ['./*.{html,js}'],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        'bebas-neue': ['Bebas Neue', 'sans-serif'],
+        'titillium-web': ['Titillium Web', 'sans-serif'],
+      },
+    },
   },
   plugins: [],
 };
