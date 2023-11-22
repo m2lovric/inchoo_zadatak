@@ -12,6 +12,7 @@ const items = [
 function startPage() {
   localStorage.setItem('state', JSON.stringify(items));
   allItems();
+  totalAmount();
 }
 
 startPage();
@@ -21,12 +22,12 @@ function allItems() {
   return items.map((item) => {
     const section = document.createElement('section');
     section.innerHTML = `
-    <article class="flex justify-between items-center w-1/2">
-      <img src="./public/${item.img}.webp" class=" w-64 h-auto"/>
-      <h1>${item.name}</h1>
-      <input type="number"  value=${item.quantity} id="${item.id}"/>
-      <p>${item.price}$</p>
-      <button class="border-solid border-gray-900 border rounded-sm px-2">remove</button>
+    <article class="flex items-center justify-between">
+      <img src="./public/${item.img}.webp" class=" w-64 h-auto justify-start"/>
+      <h1 class="justify-start">${item.name}</h1>
+      <input type="number"  value=${item.quantity} id=${item.id} class="justify-end"/>
+      <p class="justify-end">${item.price}$</p>
+      <button class="justify-end"><img src="delete.svg" alt="delete"/></button>
     </article>
     `;
     cart.appendChild(section);
@@ -39,7 +40,8 @@ function totalAmount() {
   state.map((item) => {
     total += item.quantity * item.price;
   });
-
+  document.querySelector('#total').innerHTML = `${total}`;
+  document.querySelector('#subtotal').innerHTML = `${total}`;
   console.log(total);
 }
 
@@ -50,6 +52,7 @@ function changeState(e) {
     targetObj.quantity = parseInt(e.target.value);
   }
   localStorage.setItem('state', JSON.stringify(state));
+  totalAmount();
 }
 
 document.getElementById('first').addEventListener('change', (e) => {
@@ -60,6 +63,13 @@ document.getElementById('second').addEventListener('change', (e) => {
   changeState(e);
 });
 
-document.getElementById('btn').addEventListener('click', () => {
-  totalAmount();
+document.getElementById('toggle').addEventListener('click', (e) => {
+  const content = document.getElementById('content');
+  if (content.classList.contains('hidden')) {
+    content.classList.add('active');
+    content.classList.remove('hidden');
+  } else {
+    content.classList.add('hidden');
+    content.classList.remove('active');
+  }
 });
