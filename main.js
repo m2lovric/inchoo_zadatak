@@ -9,7 +9,7 @@ const items = [
   { id: 'second', img: 'HQ6351_1', name: 'NMD_R1', quantity: 1, price: 150 },
 ];
 
-const shipping = 5;
+const shipping = { croatia: 0, uk: 10 };
 
 let USDollar = new Intl.NumberFormat('en-US', {
   style: 'currency',
@@ -48,18 +48,23 @@ function allItems() {
 function totalAmount() {
   let total = 0;
   const state = JSON.parse(localStorage.getItem('state'));
+  const country = document.querySelector('#countries').value;
   state.map((item) => {
     total += item.quantity * item.price;
   });
   document.querySelector('#total').innerHTML = `${USDollar.format(
-    total + shipping
+    total + shipping[country]
   )}`;
   document.querySelector('#subtotal').innerHTML = `${USDollar.format(total)}`;
   document.querySelector('#shipping').innerHTML = `${USDollar.format(
-    shipping
+    shipping[country]
   )}`;
   console.log(total);
 }
+
+document.querySelector('#countries').addEventListener('change', () => {
+  totalAmount();
+});
 
 function changeState(e) {
   const state = JSON.parse(localStorage.getItem('state'));
