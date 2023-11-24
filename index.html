@@ -148,20 +148,38 @@
                   <p id="shipping" class="font-titillium-web text-sm"></p>
                 </div>
               </article>
-              <article
-                class="flex justify-between items-center bg-gray-100 px-6 py-4"
-              >
-                <h3 class="font-bebas-neue font-bold text-2xl">ORDER TOTAL</h3>
-                <p class="font-titillium-web font-bold text-sm" id="total"></p>
+              <article class="flex flex-col bg-gray-100 px-6 py-4">
+                <div class="flex justify-between">
+                  <h3 class="font-bebas-neue font-bold text-2xl">
+                    ORDER TOTAL
+                  </h3>
+                  <p
+                    class="font-titillium-web font-bold text-sm"
+                    id="total"
+                  ></p>
+                </div>
+                <button
+                  class="h-12 mt-4 w-full bg-green-700 text-center font-bebas-neue text-2xl text-white"
+                >
+                  PROCEED TO CHECKOUT
+                </button>
               </article>
             </section>
           </section>
         </section>
 
         <section class="flex mt-10 mb-20 justify-between w-1/2 items-center">
-          <div>
-            <input type="text" placeholder="Enter Discount Code" />
-            <button>APPLY</button>
+          <div class="h-10 flex items-center">
+            <input
+              type="text"
+              placeholder="Enter Discount Code"
+              class="h-full border border-black pl-4 placeholder:font-titillium-web placeholder:text-sm"
+            />
+            <button
+              class="px-4 h-full font-bebas-neue text-lg border border-black"
+            >
+              APPLY
+            </button>
           </div>
 
           <button
@@ -173,18 +191,24 @@
       </section>
     </main>
 
-    <footer class="bg-gray-800 h-40 text-white text-center">
-      <nav>
+    <footer
+      class="bg-gray-800 h-40 text-white text-center flex flex-col justify-center"
+    >
+      <nav
+        class="w-1/2 mx-auto flex justify-between font-titillium-web text-sm font-bold underline"
+      >
         <a href="">ABOUT US</a>
         <a href="">CONTACT US</a>
         <a href="">SEARCH TERMS</a>
         <a href="">PRIVACY AND COOKIE POLICY</a>
         <a href="">INSTALLATION VIDEOS</a>
       </nav>
-      <div class="flex items-center">
+      <div
+        class="flex items-center justify-center w-1/2 mx-auto mt-8 text-sm font-titillium-web"
+      >
         <p>Contact our Customer</p>
-        <img src="tel.svg" alt="" />
-        <p>(800) 845-3567</p>
+        <img src="tel.svg" alt="telephone" class="mx-3" />
+        <p class="font-bold">(800) 845-3567</p>
       </div>
     </footer>
 
