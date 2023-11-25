@@ -14,21 +14,21 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <section class="bg-gray-800 h-12 flex items-center">
+    <section class="bg-zinc-800 h-12 flex items-center">
       <section
-        class="mx-auto my-0 w-9/12 flex justify-between items-center text-white text-sm"
+        class="mx-auto my-0 w-9/12 flex justify-between items-center text-white text-sm max-sm:w-11/12"
       >
         <article
-          class="flex justify-between w-5/12 items-center font-titillium-web text-sm"
+          class="flex justify-between w-5/12 items-center font-titillium-web text-sm max-sm:w-3/4"
         >
-          <p>Contact our Customer Service</p>
+          <p class="max-sm:hidden">Contact our Customer Service</p>
           <img src="tel.svg" alt="" />
-          <p class="font-bold">(800) 333-3567</p>
+          <p class="font-bold max-sm:hidden">(800) 333-3567</p>
           <a href="#" class="font-bold underline">ABOUT US</a>
           <a href="#" class="font-bold underline">CONTACT US</a>
           <a href="#" class="font-bold underline">WHERE TO BUY</a>
         </article>
-        <p class="font-titillium-web">
+        <p class="font-titillium-web max-sm:hidden">
           Promo message area - shipping advantages, special offers…
         </p>
         <article
@@ -42,13 +42,14 @@
 
     <header class="h-24 shadow-md flex">
       <section
-        class="mx-auto my-0 w-9/12 h-full flex justify-between items-center text-sm"
+        class="mx-auto my-0 w-9/12 h-full flex justify-between items-center text-sm max-sm:w-11/12"
       >
         <div
           class="flex justify-between items-center w-5/12 font-bebas-neue text-2xl"
         >
+          <img src="menu.svg" alt="menu" class="hidden mr-2 max-sm:block" />
           <img src="inchoo-logo 1.svg" alt="logo" />
-          <div class="flex items-center group">
+          <div class="flex items-center group max-sm:hidden">
             <div
               class="h-12 w-0.5 -skew-x-12 bg-black group-hover:bg-orange-400"
             ></div>
@@ -56,7 +57,7 @@
               >NEW<br />ARRIVALS</a
             >
           </div>
-          <div class="flex items-center group">
+          <div class="flex items-center group max-sm:hidden">
             <div
               class="h-12 w-0.5 -skew-x-12 bg-black group-hover:bg-orange-400"
             ></div>
@@ -65,42 +66,55 @@
             >
           </div>
         </div>
-        <div class="flex justify-between items-center w-5/12">
+        <div
+          class="flex justify-between items-center w-5/12 max-sm:justify-end"
+        >
           <input
             type="search"
             name="search"
             id="search"
-            class="h-12 border-2 w-4/6 pl-3 border-black"
+            class="h-12 border-2 w-4/6 pl-3 border-black max-sm:hidden"
             placeholder="Search entire store here…"
           />
           <button
-            class="h-12 p-4 bg-green-700 flex items-center justify-between"
+            class="hidden bg-zinc-800 max-sm:flex items-center justify-between"
+          >
+            <img src="search.svg" alt="search" class="h-12" />
+          </button>
+          <button
+            class="h-12 p-4 bg-green-700 flex items-center justify-between max-sm:ml-2"
           >
             <img src="shopping-cart.png" alt="shopping cart" />
-            <p class="font-bebas-neue text-lg text-white px-5">MY CART</p>
-            <img src="down.svg" alt="arrow down" />
+            <p class="font-bebas-neue text-lg text-white px-5 max-sm:hidden">
+              MY CART
+            </p>
+            <img src="down.svg" alt="arrow down" class="max-sm:hidden" />
           </button>
         </div>
       </section>
     </header>
 
     <main class="flex">
-      <section class="mx-auto my-0 w-9/12">
-        <h1 class="text-7xl mt-14 mb-8 font-bebas-neue">SHOPPING CART</h1>
-        <section class="flex justify-between">
-          <section class="w-7/12 divide-y">
-            <article class="flex py-2 justify-normal font-bold w-5/6">
+      <section class="mx-auto my-0 w-9/12 max-sm:w-11/12">
+        <h1 class="text-7xl mt-14 mb-8 font-bebas-neue max-sm:text-2xl">
+          SHOPPING CART
+        </h1>
+        <section class="flex justify-between max-sm:flex-col-reverse">
+          <section class="w-7/12 divide-y max-sm:w-full">
+            <article
+              class="flex py-2 justify-normal font-bold w-5/6 max-sm:hidden"
+            >
               <p class="flex-1">Item</p>
               <p>Qty</p>
               <p class="ml-12">SUBTOTAL</p>
             </article>
-            <!-- Cart items render -->
-            <div id="cart" class="divide-y"></div>
+            <!-- +++++++CART ITEMS RENDER++++++++ -->
+            <div id="cart" class="divide-y max-sm:"></div>
           </section>
 
-          <section class="w-4/12">
+          <section class="w-4/12 max-sm:w-full">
             <section>
-              <h1 class="text-4xl font-bebas-neue">SUMMARY</h1>
+              <h1 class="text-4xl font-bebas-neue max-sm:hidden">SUMMARY</h1>
               <article
                 class="flex justify-between bg-gray-100 mt-2 px-6 py-4 border-b border-white"
               >
@@ -133,10 +147,7 @@
                 <input type="radio" name="rate" id="rate" checked />
                 <label for="rate" class="font-titillium-web text-sm font-bold"
                   >Fixed
-                  <span class="font-titillium-web text-xs text-zinc-500"
-                    >($5.00)</span
-                  ></label
-                >
+                </label>
               </article>
               <article class="bg-gray-100 px-6 py-4 border-b border-white">
                 <div class="flex justify-between">
@@ -168,12 +179,14 @@
           </section>
         </section>
 
-        <section class="flex mt-10 mb-20 justify-between w-1/2 items-center">
-          <div class="h-10 flex items-center">
+        <section
+          class="flex mt-10 mb-20 justify-between w-1/2 items-center max-sm:flex-col-reverse max-sm:w-full"
+        >
+          <div class="h-10 flex items-center max-sm:w-full max-sm:mt-4">
             <input
               type="text"
               placeholder="Enter Discount Code"
-              class="h-full border border-black pl-4 placeholder:font-titillium-web placeholder:text-sm"
+              class="h-full border border-black pl-4 placeholder:font-titillium-web placeholder:text-sm max-sm:w-full"
             />
             <button
               class="px-4 h-full font-bebas-neue text-lg border border-black"
@@ -183,7 +196,7 @@
           </div>
 
           <button
-            class="bg-gray-800 h-10 px-10 font-bebas-neue text-lg text-white"
+            class="bg-zinc-800 h-10 px-10 font-bebas-neue text-lg text-white max-sm:w-full"
           >
             UPDATE SHOPPING CART
           </button>
@@ -192,10 +205,10 @@
     </main>
 
     <footer
-      class="bg-gray-800 h-40 text-white text-center flex flex-col justify-center"
+      class="bg-zinc-800 h-40 text-white text-center flex flex-col justify-center max-sm:h-fit max-sm:py-8"
     >
       <nav
-        class="w-1/2 mx-auto flex justify-between font-titillium-web text-sm font-bold underline"
+        class="w-1/2 mx-auto flex justify-between font-titillium-web text-sm font-bold underline max-sm:w-full max-sm:flex-col max-sm:gap-6"
       >
         <a href="">ABOUT US</a>
         <a href="">CONTACT US</a>
@@ -204,9 +217,9 @@
         <a href="">INSTALLATION VIDEOS</a>
       </nav>
       <div
-        class="flex items-center justify-center w-1/2 mx-auto mt-8 text-sm font-titillium-web"
+        class="flex items-center justify-center w-1/2 mx-auto mt-8 text-sm font-titillium-web max-sm:flex-wrap max-sm:text-center"
       >
-        <p>Contact our Customer</p>
+        <p class="max-sm:w-full">Contact our Customer Service</p>
         <img src="tel.svg" alt="telephone" class="mx-3" />
         <p class="font-bold">(800) 845-3567</p>
       </div>

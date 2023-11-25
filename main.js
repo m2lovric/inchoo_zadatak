@@ -29,16 +29,20 @@ function allItems() {
   return items.map((item) => {
     const section = document.createElement('section');
     section.innerHTML = `
-    <article class="flex items-center justify-between">
-      <img src="./public/${item.img}.webp" class=" w-64 h-auto flex-1"/>
-      <h1 class="flex-1 font-bebas-neue text-xl">${item.name}</h1>
-      <input type="number"  value=${item.quantity} id=${
+    <article class="flex items-center justify-between max-sm:flex-col">
+      <div class="flex justify-between items-center flex-1 mr-20">
+        <img src="${item.img}.webp" class=" w-64 h-auto max-sm:mr-10"/>
+        <h1 class="font-bebas-neue text-xl">${item.name}</h1>
+      </div>
+      <div class="flex flex-1 justify-between items-center max-sm:w-full max-sm:justify-evenly max-sm:mb-10">
+        <input type="number"  value=${item.quantity} id=${
       item.id
-    } class="w-12 h-12 pl-4 border-2 text-center border-black"/>
-      <p class="font-titillium-web font-bold w-1/6 ml-12">${USDollar.format(
-        item.price
-      )}</p>
-      <button class="ml-auto justify-self-end w-1/12"><img src="delete.svg" alt="delete"/></button>
+    } class="w-12 h-12 ml-[18%] pl-4 border-2 text-center border-black max-sm:ml-0 "/>
+        <p class="font-titillium-web font-bold w-1/6 mr-[5%] max-sm:mr-0 ">${USDollar.format(
+          item.price
+        )}</p>
+        <button class=" w-1/12"><img src="delete.svg" alt="delete"/></button>
+      </div>
     </article>
     `;
     cart.appendChild(section);
