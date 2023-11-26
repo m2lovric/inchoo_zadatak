@@ -31,7 +31,7 @@ function allItems() {
     section.innerHTML = `
     <article class="flex items-center justify-between max-sm:flex-col">
       <div class="flex justify-between items-center flex-1 mr-20">
-        <img src="${item.img}.webp" class=" w-64 h-auto max-sm:mr-10"/>
+        <img src="${item.img}.webp" class=" w-64 h-auto max-sm:mr-3"/>
         <h1 class="font-bebas-neue text-xl">${item.name}</h1>
       </div>
       <div class="flex flex-1 justify-between items-center max-sm:w-full max-sm:justify-evenly max-sm:mb-10">
